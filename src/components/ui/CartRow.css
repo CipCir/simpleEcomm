@@ -1,0 +1,30 @@
+.qCtrl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Qbtn {
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  border: solid 1px grey;
+  border-radius: 10px;
+  margin: 3px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Qdisabled {
+  background-color: gray;
+  opacity: 0.7;
+}
+.Qbtn:hover {
+  background-color: lightgray;
+}
+.Qdisabled:hover {
+  background-color: gray;
+  cursor: not-allowed;
+}
