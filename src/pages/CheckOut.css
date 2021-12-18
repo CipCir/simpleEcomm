@@ -1,3 +1,7 @@
 .fRow {
   margin-bottom: 25px;
+  display: flex;
+}
+.fRow > * {
+  margin-right: 5px !important;
 }

@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.Qbtn {
+.qBtn {
   width: 20px;
   height: 20px;
   padding: 3px;
@@ -17,14 +17,14 @@
   justify-content: center;
   align-items: center;
 }
-.Qdisabled {
+.qDisabled {
   background-color: gray;
   opacity: 0.7;
 }
-.Qbtn:hover {
+.qBtn:hover {
   background-color: lightgray;
 }
-.Qdisabled:hover {
+.qDisabled:hover {
   background-color: gray;
   cursor: not-allowed;
 }

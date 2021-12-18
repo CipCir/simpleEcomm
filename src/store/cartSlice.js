@@ -8,18 +8,18 @@ const slice = createSlice({
   },
   reducers: {
     addToCart(state, action) {
-      const currProd = action.payload;
-      const prodIndx = state.items.find((el) => el.id === currProd.id);
+      const sentProd = action.payload;
+      const currProd = state.items.find((el) => el.id === sentProd.id);
 
       //if prod exists update q and total price
-      if (prodIndx) {
-        prodIndx.q++;
-        prodIndx.totalPrice = prodIndx.q * prodIndx.price;
+      if (currProd) {
+        currProd.q++;
+        currProd.totalPrice = currProd.q * currProd.price;
       } else {
         state.items.push({
-          ...currProd,
+          ...sentProd,
           q: 1,
-          totalPrice: currProd.price,
+          totalPrice: sentProd.price,
         });
       }
 
@@ -27,17 +27,17 @@ const slice = createSlice({
     },
     updateQ(state, action) {
       //issues with +- decimal numbers, had to use toFixed
-      const prodIndx = state.items.find((el) => el.id === action.payload.id);
+      const currProd = state.items.find((el) => el.id === action.payload.id);
       if (action.payload.add) {
-        prodIndx.q++;
-        prodIndx.totalPrice = +(prodIndx.totalPrice + prodIndx.price).toFixed(
+        currProd.q++;
+        currProd.totalPrice = +(currProd.totalPrice + currProd.price).toFixed(
           12
         );
         state.totalQ++;
       } else {
-        if (prodIndx.q === 1) return state;
-        prodIndx.q--;
-        prodIndx.totalPrice = +(prodIndx.totalPrice - prodIndx.price).toFixed(
+        if (currProd.q === 1) return state;
+        currProd.q--;
+        currProd.totalPrice = +(currProd.totalPrice - currProd.price).toFixed(
           12
         );
         state.totalQ--;

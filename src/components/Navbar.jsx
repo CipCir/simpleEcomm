@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./Navbar.module.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import HomeIcon from "@mui/icons-material/Home";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
 
